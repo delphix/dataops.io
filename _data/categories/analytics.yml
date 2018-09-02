@@ -1,0 +1,39 @@
+short_name: analytics
+description: Access to real-time, actionable insights can mean the difference between success and failure in business. Failure to get clean, relevant data to the right systems and teams can result in poor decisions or missed market opportunities.
+pretty_name: Data Analytics
+fa-icon: fa-chart-line
+image: ../img/analytics.jpg
+challenge: >
+  At its heart, data analytics is about separating the signal (insight) from the noise (data). Modern businesses are continually challenged to rapidly find insights that help them understand their business and unlock innovation to drive competitive differentiation. Data analysts are tasked with divining these business truths from an ocean of data, in real time. But achieving this goal becomes increasingly difficult as data increases in size and complexity, even as demand for quicker insights mounts.
+  <br><br>
+  For analytics-driven enterprises struggling with outdated data, dirty data, and insufficient data environments for creating and testing models, DataOps provides an approach for delivering the right data, to the right place, at the right time.
+# exec_summary: >
+#  Data analysts are often asked to divine important business truths from an endless ocean of data, in a near-instant manner. Yet, at the same time, data analysts find themselves encumbered with data friction that prevents them from executing the task at hand. Data friction can manifest itself in limited/no access to real and clean data sets, insufficient data environments for creating and testing models, silo’d and compartmentalized teams, etc.
+notes: >
+  - possibly put some references in here to dataops manifesto
+  - data volume
+  - data security
+  - http://www.delphi-tech.com/4-challenges-of-business-analytics-and-how-to-overcome-them/
+people:
+  - <b>Create cross-functional teams:</b> Analytics should not be the responsibility of one particular person or function. Cross-functional teams should be oriented around business goals, and maintain a holistic view of data independent of their function.
+  - <b>Understand the full data lifecycle:</b> Both data consumers and data operators must understand the lifecycle of their data, from sourcing, aggregation, cleansing to analysis, visualization and action.
+process:
+  - <b>Set a review cadence:</b> As a team, routinely review the data lifecycle to identify and eliminate inefficiencies.
+  - <b>Consider downstream impact:</b> When the structure source data changes, such as with a new application release, ensure that all downstream consumers are part of the review and release process to minimize disruption.
+  - <b>Automate:</b> Seek to replace human data controls with automated ones. For example, instead of protecting data by manually executing a checklist, test and validate via automated controls.
+technology:
+  - <b>Version all the things:</b> Although version control is a capability associated with code, forward-thinking organizations are also applying it to their data, security controls, and even analytics reports and models.
+  - <b>Toolchain optimization:</b> Focus on tools that enable repeatability, self-service, scale, and automation. For example, implement a solution that enables self-service data requests and fulfillment across the enterprise, with proper role-based access and governance controls.
+references: >
+  <p class="application">Additional information about the analytics application of DataOps in can be found at <a href="http://dataopsmanifesto.org" target="_blank">http://dataopsmanifesto.org</a></p>
+data_operators:
+  - Database Team
+  - Storage Team
+  - Server Team
+  - Information Security
+  - Data Architects
+  - Data Engineers
+data_consumers:
+  - Analysts
+  - Data Scientists
+  - Business Dashboard owners

@@ -1,0 +1,29 @@
+short_name: sdlc
+description: Developers and testers require access to test data at multiple stages. DataOps can be applied to the software development lifecycle (SDLC) to increase release speed and improve application quality.
+pretty_name: Software Development Lifecycle
+fa-icon: fa-code
+image: ../img/sdlc.jpg
+challenge: >
+  The majority of organizations are implementing continuous integration/continuous delivery (CI/CD) and DevOps into their SDLC. This typically includes codifying and automating infrastructure, application, and code rollouts. Provisioning data, however, is often left to a manual or bespoke process from request all the way to delivery. 
+  <br><br>
+  This usually yields one of the following compensating approaches&#58; 1) Data operators take hours, days, or even weeks to provision, restore, or refresh data to a waiting CI/CD pipeline, or 2) Data consumers (developers or testers) generate their own data to satisfy the demand themselves. The former approach impacts project timelines. The latter invites a host of quality and consistency issues that inject delays later in the pipeline. Furthermore, data model states and test data are rarely version-controlled and tested. 
+  <br><br>
+  Efficient DataOps, however, eliminates data inconsistencies and delays that result in a toxic culture across Dev, QA/Test, and Ops. By aligning operators and consumers and bringing automation to data, DataOps helps organizations realize the promise of automated SDLC pipelines.
+people:
+  - <b>Understand the data lifecycle:</b> Developers, testers, and operations teams must understand the full lifecycle of their data from sourcing, cleansing, subsetting, securing, provisioning, and retirement.
+  - <b>Align Data Consumers and Operators:</b> Agree on shared goals and objectives&#58; e.g. increase release cadence, reducing data-related defects, or increasing test frequency.
+process:
+  - <b>Adopt an “automation-first” policy for data:</b> Manual data processes should only be by documented exception.
+  - <b>Eliminate manual security controls:</b> Automation initiatives must encompass key data security processes to not only improve speed and productivity, but also mitigate risk. 
+technology:
+  - <b>Avoid point solutions:</b> Embrace platform solutions that have demonstrated interoperability with your existing SDLC toolchain, can be automated through APIs, and support multiple data sources and clouds.
+  - <b>Empower teams with self service:</b> Implement solutions that enable self-service data request and fulfillment while providing robust test data management and provisioning capabilities.
+data_operators:
+  - Database Team
+  - Storage Team
+  - Server Team
+  - Information Security
+data_consumers:
+  - Developers
+  - Testers
+  - QA

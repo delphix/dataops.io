@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<div class="header-container jumbotron" style="background-image: url('{{ "/img/welcome.png" | prepend: site.baseurl }}');">
+    <div class="container">
+        <h1>Welcome to DataOps.io</h1>
+        <p>A site devoted to helping others learn more about DataOps and eliminating Data Friction from their lives.</p>
+        <!-- <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | prepend: site.baseurl }}" role="button">Learn more</a></p>-->
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="media-group">
+        <div class="media media-50 text-left">
+            <div class="media-left media-middle">
+            <img src="{{ "/img/dataops-1.png" | prepend: site.baseurl }}" alt="" class="img-responsive">
+            </div>
+            <div class="media-body">
+                <span class="anchor" id="What is DataOps?"></span>
+                <h2 class="header-light regular-pad">What is DataOps?</h2></a>
+                <blockquote>
+                    <p>DataOps is the alignment of people, process, and technology to enable the rapid, automated, and secure management of data. Its goal is to improve individual and team outcomes by bringing together those that need data with those that provide it, eliminating <strong data-toggle="tooltip" data-placement="auto bottom" title="The resistance encountered from people, process, and technology when requesting and delivering data." >data friction</strong> throughout the data lifecycle.</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="media media-50">
+            <div class="media-left media-middle">
+            <img src="{{ "/img/dataops-2.png" | prepend: site.baseurl }}" alt="" class=" img-responsive">
+            </div>
+            <div class="media-body">
+                <span class="anchor" id="Who Needs DataOps?"></span>
+                <h2 class="header-light regular-pad">Who Needs DataOps?</h2>
+                <blockquote>
+                <p>Patrick Debois famously said about DevOps: “<a href="https://www.slideshare.net/jedi4ever/bootstrapping-a-devops-mentality-at-skillsmatter-by-patrick-debois/11-Its_NOT_a_technical_problem" target=_blank>It’s not a technology problem. It’s a human problem.</a>” Mastering DataOps requires overcoming the organizational and cultural barriers that separate people from their data. It starts with bringing everyone involved with data -- from the infrastructure team to the security and compliance team, to the analytics and machine learning team -- together into an iterative Agile flow.</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-icon bg--dark-green clearfix text--white">
+    <div class="container">
+        <div class="grid-icon-left">
+            <h2>This enables two key groups to connect as one team:</h2>
+        </div>
+        <div class="grid-icon-right">
+            <div class="grid-icon-list">
+                <div class="grid-icon-item clearfix">
+                    <div class="grid-icon-group-left">
+                    <img src="{{ "/img/data-operator.png" | prepend: site.baseurl }}" alt="data operator" />
+                    </div>
+                    <div class="grid-icon-group-right">
+                        <h4>Data Operators</h4>
+                        <p class="text--small">Responsible for infrastructure, security, and maintenance to support the data lifecycle. Examples include DBAs, security and compliance, and storage administrators.</p>
+                    </div>
+                </div>
+                <div class="grid-icon-item clearfix">
+                        <div class="grid-icon-group-left">
+                        <img src="{{ "/img/data-consumers.png" | prepend: site.baseurl }}" alt="data consumers" />
+                        </div>
+                        <div class="grid-icon-group-right">
+                            <h4>Data Consumers</h4>
+                            <p class="text--small">Responsible for using data in the performance of their duties, including driving new projects and innovating at all levels. Examples include developers, QA, data scientists, analysts, and AI/ML tools.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-icon-text text--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid-icon-inner">
+                    <span class="anchor" id="Friction Areas"></span>
+                    <h2 class="header-light regular-pad">Common Friction Areas of DataOps</h2>
+                    <p class="text--regular">DataOps mandates a comprehensive approach that eliminates key points of friction across key areas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row grid-icon-text-list">
+            <div class="col-sm-4 col-xs-12">
+                <div class="grid-icon-text-inner">
+                    <a href="{{ "/friction#Governance" | prepend: site.baseurl }}">
+                        <h1 class="margin--medium"><img src="{{ "/img/governance.png" | prepend: site.baseurl }}"
+                            alt="governance" /></h1>
+                        <h4 class="">Governance</h4>
+                    </a>
+                    <p class="text--small">Security, quality, and integrity of data, including auditing and access controls.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="grid-icon-text-inner">
+                    <a href="{{ "/friction#Operations" | prepend: site.baseurl }}">
+                    <h1 class="margin--medium"><img src="{{ "/img/operations.png" | prepend: site.baseurl }}" alt="operations" /></h1>
+                        <h4 class="">Operations</h4>
+                    </a>
+                    <p class="text--small">Scalability, availability, monitoring, and reliability of data systems.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="grid-icon-text-inner">
+                    <a href="{{ "/friction#Delivery" | prepend: site.baseurl }}">
+                    <h1 class="margin--medium"><img src="{{ "/img/delivery.png" | prepend: site.baseurl }}" alt="delivery" /></h1>
+                        <h4 class="">Delivery</h4>
+                    </a>
+                    <p class="text--small">Collection, copying, transferring, and distribution of data.</p>
+                </div>
+            </div>
+            <div class="col-sm-2 col-xs-12"></div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="grid-icon-text-inner">
+                    <a href="{{ "/friction#Definition" | prepend: site.baseurl }}">
+                    <h1 class="margin--medium"><img src="{{ "/img/definition.png" | prepend: site.baseurl }}" alt="definition" /></h1>
+                        <h4 class="">Definition</h4>
+                    </a>
+                    <p class="text--small">Designing, Planning, and Documenting the data throughout the entire data lifecycle.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="grid-icon-text-inner">
+                    <a href="{{ "/friction#Transformation" | prepend: site.baseurl }}">
+                    <h1 class="margin--medium"><img src="{{ "/img/transformation.png" | prepend: site.baseurl }}"
+                        alt="transformation" /></h1>
+                        <h4 class="">Transformation</h4>
+                    </a>
+                    <p class="text--small">Manipulation and modification of data, including de-identification and data migration.</p>
+                </div>
+                <div class="col-sm-2 col-xs-12"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+short_name: ml
+description: Your machine learning (ML) initiative is only as good as the data you feed it. ML algorithms require high-quality representational data for training, and reliable data streams for execution.
+pretty_name: Machine Learning and Artificial Intelligence
+fa-icon: fa-desktop
+image: ../img/ml.jpg
+challenge: >
+  Machine learning frameworks and services have built massive momentum. Sophisticated models are driving new forms of data science, and ML-enabled applications are delivering new capabilities around voice computing, image recognition, and more. All of this is driving demand for clean, representative data.
+  <br><br>
+  Poor training data leads to bad models and ineffective algorithms. Unreliable data pipelines affect the ability of ML systems to deliver timely answers which, in turn, has an outsized impact on business outcomes. A brief delay in getting accurate data once resulted in a few compromised decisions with limited financial impact. But with ML-based systems driving business decisions at scale, delayed or dirty data could result in much more significant losses.
+  <br><br>
+  These factors make DataOps critical for the operations of deployed ML systems, as well as in training contexts where full, clean datasets are required to test and tune the algorithms that constitute a system’s intelligence.
+people:
+  - <b>Educate the operator:</b> Data consumers with expertise in AI/ML must educate their operator counterparts— who may be unfamiliar with relevant concepts — on new workflows, dynamics, and requirements demanded by emerging systems.
+  - <b>Organize goal-oriented teams:</b>  With the ML field rapidly evolving, teams must work cross-functionally to advance their projects with speed and efficiency.
+process:
+  - <b>Leverage “hands-free” processes:</b> Instant, seamless, and automatic delivery of data is vitally important to fully leverage the automation provided by ML. Processes must be be “hands-free” from the beginning.
+  - <b>Review existing data policies:</b> Process review should be integrated directly into ML development projects&#58; Pre-existing data management policies were designed with people in mind, not machines.
+technology:
+  - <b>Treat data like code:</b> You will be continually transforming and redesigning existing datasets to better serve ML projects. Changes should be versioned, stored, and otherwise treated as code to maximize flexibility and support iterative development processes.
+  - <b>Focus on automation:</b> Automated data selection, cleansing, and delivery prevents data from bottlenecking time-sensitive ML processes.
+data_operators:
+  - Database Team
+  - Data Engineers
+  - Storage Team
+  - Server Team
+  - Information Security
+  - Data Architects
+data_consumers:
+  - Developers
+  - Testers
+  - AI/ML training systems
+  - AI/ML production systems

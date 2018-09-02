@@ -1,0 +1,1121 @@
+// Delphix 3.3.7
+// Bootswatch
+// -----------------------------------------------------
+
+// Variable
+$spacing-gutter-large: 72px;
+
+// Colors =====================================================================
+$blue: #1ad6f5;
+$dark-blue: #065ea3;
+$white: #fff;
+$gray-de: #dedede;
+$gray-f0: #f0f0f0;
+$green: #004645;
+$gray-28: #282828;
+$gray-f9: #f9f9f9;
+$gray-f3: #f3f3f3;
+$gray-e8: #e8e8e8;
+
+// Mixins =====================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url('../' + quote($path + '.' + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin gilroy {
+  font-family: 'Gilroy', sans-serif;
+}
+
+@mixin proximanova {
+  font-family: 'ProximaNova', sans-serif;
+}
+
+@mixin librebaskerville {
+  font-family: 'LibreBaskerville', sans-serif;
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder, $opacity: .8) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; opacity: $opacity; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; opacity: $opacity; } // Safari and Chrome
+}
+
+// Gradient overlay as mixin.
+@mixin gradient-overlay($gr-color, $gr-opacity) {
+  position: relative;
+
+  &:before {
+    background: rgba($gr-color, $gr-opacity);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+@mixin invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@include font-face(Gilroy, fonts/Gilroy-Regular, 400, normal);
+@include font-face(Gilroy, fonts/Gilroy-Light, 200, normal);
+@include font-face(Gilroy, fonts/Gilroy-Medium, 500, normal);
+@include font-face(Gilroy, fonts/Gilroy-Bold, 700, normal);
+@include font-face(Gilroy, fonts/Gilroy-ExtraBold, 900, normal);
+@include font-face(ProximaNova, fonts/ProximaNova-Regular, 400, normal);
+@include font-face(LibreBaskerville, fonts/LibreBaskerville-Italic, 400, italic);
+@include font-face(Fontawesome, fonts/fontawesome-webfont);
+
+// Icons ======================================================================
+%icons {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Fontawesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon-ok:before {
+  content: '\f00c';
+}
+
+.icon-long_arrow_right:before {
+  content: "\f178";
+}
+
+// Helper
+.bg {
+  &--dark {
+    &-green {
+      background-color: $green;
+    }
+
+    &-gray {
+      background-color: $gray-28;
+
+      &--overlay {
+        @include gradient-overlay($gray-28, 1);
+      }
+    }
+  }
+}
+
+.bg-pattern-light {
+  background-color: $white;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    background-color: $gray-e8;
+    opacity: .5;
+  }
+
+  &:after {
+    background-image: url('../img/Teal-Wave-100.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    opacity: .15;
+    z-index: 2;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.text {
+  &--white {
+    color: $white;
+
+    h1,h2,h3,h4,h5,h6 {
+      color: $white;
+    }
+  }
+
+  &--regular {
+    font-weight: 400;
+  }
+
+  &--small {
+    font-size: 12px;
+  }
+}
+
+.margin {
+  &--medium {
+    margin-bottom: 26px;
+  }
+}
+
+%clearfix,
+.clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.link {
+  &--arrow {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 3px 0;
+    text-transform: uppercase;
+
+    &:after {
+      @extend %icons;
+      @extend .icon-long_arrow_right:before;
+      display: inline-block;
+      font-size: 24px;
+      padding: 0 0 0 18px;
+      position: relative;
+      right: 0;
+      top: 5px;
+      transition: right 0.3s ease;
+    }
+
+    &:active,
+    &:hover {
+      &:after {
+        right: -10px;
+      }
+    }
+
+    &.disabled {
+      color: $gray-de;
+    }
+  }
+
+  &--dark-blue {
+    color: $green;
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: lighten($green, 5%);
+    }
+  }
+}
+
+// Typograph ==================================================================
+h1 {
+  font-weight: 700;
+}
+
+body {
+  font-weight: 200;
+}
+
+// Navbar =====================================================================
+.navbar {
+  font-weight: 400;
+}
+
+// Buttons ====================================================================
+
+@mixin btn($class, $bg, $bg-second, $color: $white){
+  .btn-#{$class} {
+    &:focus {
+      background-color: $bg;
+    }
+
+    &:active {
+      @include box-shadow(none);
+    }
+
+    &[disabled],
+    &.disabled {
+      @include box-shadow(none);
+      background: rgba($bg, .85);
+      border: 0;
+      color: $color;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:active {
+      background-image: radial-gradient(circle at 0 0, $bg, $bg-second);
+    }
+  }
+}
+
+$btn-lighten-percent: 30%;
+$btn-default-dark-bg: $blue;
+$btn-primary-dark-bg: $blue;
+$btn-success-dark-bg: lighten($btn-success-bg, $btn-lighten-percent);
+$btn-info-dark-bg: lighten($btn-info-bg, $btn-lighten-percent);
+$btn-warning-dark-bg: lighten($btn-warning-bg, $btn-lighten-percent);
+$btn-danger-dark-bg: lighten($btn-danger-bg, $btn-lighten-percent);
+$btn-link-dark-bg: $blue;
+
+@include btn(primary, $btn-primary-bg, $btn-default-dark-bg);
+@include btn(success, $btn-success-bg, $btn-success-dark-bg);
+@include btn(info, $btn-info-bg, $btn-info-dark-bg);
+@include btn(warning ,$btn-warning-bg, $btn-warning-dark-bg);
+@include btn(danger, $btn-danger-bg, $btn-danger-dark-bg);
+@include btn(link, $white, $white);
+
+.btn {
+  border: 0;
+  letter-spacing: .4px;
+  line-height: 1;
+  min-width: 100px;
+  outline: none;
+  padding: 20px 36px;
+  text-align: center;
+
+  &[disabled],
+  &.disabled {
+    @include box-shadow(none);
+    pointer-events: none;
+  }
+
+  &-default {
+    @include box-shadow(0 0 0 1px $btn-default-border inset);
+
+    &:active {
+      @include box-shadow(0 0 0 1px $btn-default-border inset);
+    }
+
+    &[disabled],
+    &.disabled {
+      @include box-shadow(0 0 0 1px $btn-default-border inset);
+    }
+  }
+}
+
+.btn-group > .btn + .dropdown-toggle {
+  min-width: inherit;
+}
+
+// Typography =================================================================
+
+a {
+  transition: color .2s ease-in;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $dark-blue;
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  border-left: 0;
+  color: $gray-dark;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.62;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.blockquote-reverse,
+blockquote.pull-right {
+  border-right: 0;
+}
+
+// Tables =====================================================================
+
+.table {
+  margin-bottom: 15px;
+
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-top: 0;
+        font-size: 14px;
+        min-width: 120px;
+        border-bottom: 1px solid $gray-de;
+      }
+    }
+  }
+
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: top;
+    border-bottom: 1px solid $gray-de;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 0;
+  }
+
+  th {
+    font-weight: 700;
+  }
+}
+
+.table-responsive {
+  margin-bottom: 15px;
+}
+
+// Forms ======================================================================
+
+label {
+  @include gilroy;
+  color: $gray-dark;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1.75;
+  margin-bottom: 3px;
+}
+
+.form-control {
+  @include box-shadow(none);
+  border-width: 2px;
+  line-height: 1;
+  padding: 5px 15px;
+
+  &:focus {
+    border-color: $brand-primary;
+    @include box-shadow(none);
+  }
+
+  &[disabled] {
+    @include placeholder($input-color-placeholder, .5);
+  }
+}
+
+.has-success,
+.has-warning,
+.has-error {
+  .form-control {
+    &:focus {
+      @include box-shadow(none);
+    }
+  }
+}
+
+.has-success {
+  .form-control {
+    &:focus {
+      border-color: $state-success-text;
+    }
+  }
+}
+
+.has-warning {
+  .form-control {
+    &:focus {
+      border-color: $state-warning-text;
+    }
+  }
+}
+
+.has-error {
+  .form-control {
+    &:focus {
+      border-color: $state-danger-text;
+    }
+  }
+}
+
+textarea.form-control {
+  min-height: 200px;
+  padding: 10px 15px;
+}
+
+.input-group-addon {
+  padding: 5px 15px;
+}
+
+.input-group-btn {
+  .btn {
+    padding: 13px 15px;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  @include invisible;
+
+  &:checked {
+    + .label-text {
+      &:before {
+        border-color: $brand-primary;
+      }
+    }
+  }
+}
+
+.label-text {
+  padding: 0 0 2px 35px;
+  position: relative;
+  display: block;
+
+  &:before {
+    border: 1px solid $gray-de;
+    content: '';
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 24px;
+
+    @media (min-width: $screen-sm-min) {
+      height: 18px;
+      top: 5px;
+      width: 18px;
+    }
+  }
+
+  &:after {
+    content: '';
+    left: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 6px;
+    transition: opacity .3s ease;
+
+    @media (min-width: $screen-sm-min) {
+      top: 10px;
+    }
+  }
+}
+
+.checkbox,
+.radio {
+  label {
+    @include proximanova;
+    font-weight: 400;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 3px;
+    padding-left: 0;
+  }
+}
+
+.radio {
+  .label-text {
+    &:before {
+      border-radius: 50%;
+    }
+  }
+
+  input[type="radio"] {
+    &:checked {
+      & + .label-text {
+        &:before {
+          border-width: 2px;
+          height: 24px;
+          width: 24px;
+
+          @media (min-width: $screen-sm-min) {
+            height: 18px;
+            width: 18px;
+          }
+        }
+
+        &:after {
+          width: 16px;
+          height: 16px;
+          opacity: 1;
+          background: $brand-primary;
+          border-radius: 100%;
+
+          @media (min-width: $screen-sm-min) {
+            width: 10px;
+            height: 10px;
+            top: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox {
+  .label-text {
+    padding: 0 0 2px 40px;
+
+    @media (min-width: $screen-sm-min) {
+      padding: 0 0 2px 35px;
+    }
+
+    &:before {
+      width: 24px;
+      height: 24px;
+
+      @media (min-width: $screen-sm-min) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked {
+      & + .label-text {
+        &:before {
+          background-color: $brand-primary;
+          border-color: $brand-primary;
+          border-width: 2px;
+          height: 26px;
+          width: 26px;
+
+          @media (min-width: $screen-sm-min) {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        &:after {
+          @extend %icons;
+          @extend .icon-ok:before;
+          color: $white;
+          font-size: 15px;
+          left: 6px;
+          opacity: 1;
+
+          @media (min-width: $screen-sm-min) {
+            font-size: 14px;
+            left: 3px;
+            top: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-horizontal {
+  @media (min-width: $screen-sm-min) {
+    .control-label {
+      padding-top: 10px;
+    }
+  }
+}
+
+// Pagination =================================================================
+.pagination {
+  > li {
+    display: inline-block;
+    margin-right: 10px;
+
+    > a,
+    > span {
+      padding: 10px 22px;
+      font-size: 14px;
+    }
+  }
+}
+
+// Media ======================================================================
+.media-50 {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding: 15px 0;
+
+  @media (min-width: $screen-sm-min) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @media (min-width: $screen-md-min) {
+    align-items: stretch;
+    padding: 38px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 45px 0;
+  }
+
+  .media-left,
+  .media-body {
+    width: auto;
+    display: block;
+
+    @media (min-width: $screen-sm-min) {
+      width: 50%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      display: block;
+    }
+  }
+
+  .media-left {
+    padding-right: 0;
+
+    @media (min-width: $screen-sm-min) {
+      padding-right: $spacing-gutter-large / 2;
+    }
+  }
+
+  .media-body {
+    @media (min-width: $screen-sm-min) {
+      padding-left: $spacing-gutter-large / 2;
+    }
+  }
+
+  &.text-left {
+    @media (min-width: $screen-sm-min) {
+      flex-direction: row-reverse;
+    }
+
+    .media-left {
+      @media (min-width: $screen-sm-min) {
+        padding-left: $spacing-gutter-large / 2;
+        padding-right: 0;
+      }
+    }
+
+    .media-body {
+      @media (min-width: $screen-sm-min) {
+        padding-left: 0;
+        padding-right: $spacing-gutter-large / 2;
+      }
+    }
+  }
+}
+
+.media-group {
+  padding: 30px 0 0;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 50px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 80px 0;
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+  @include pagination-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+
+// Small
+.pagination-sm {
+  @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+.navbar-form .has-feedback .form-control-feedback {
+  right: 10px;
+  top: 0 !important;
+}
+
+// Containers =================================================================
+.jumbotron {
+  @media (min-width: $screen-sm-min) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.page-content {
+  .container {
+    @media (min-width: $screen-md-min) {
+      padding: 0 ($grid-gutter-width + 60px) / 2;
+    }
+  }
+
+  .wrapper {
+    background-color: $gray-f3;
+  }
+}
+
+// Grid icon
+.grid-icon {
+  padding: 30px 0 50px;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 50px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 80px 0 73px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    padding: 100px 0 95px;
+  }
+
+  &-left,
+  &-right {
+    @media (min-width: $screen-sm-min) {
+      float: left;
+    }
+  }
+
+  &-left {
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-sm-min) {
+      padding-right: 44px;
+      width: 30%;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding-right: 35px;
+      width: 250px;
+      margin-bottom: 0;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      @media (min-width: $screen-sm-min) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-right {
+    @media (min-width: $screen-sm-min) {
+      border-left: 2px solid $white;
+      padding-left: 50px;
+      width: 70%;
+    }
+
+    @media (min-width: $screen-md-min) {
+      padding-left: 60px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: calc(100% - 250px);
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      margin-top: 0;
+    }
+  }
+
+  &-list {
+    @include clearfix;
+  }
+
+  &-group-left,
+  &-group-right {
+    @media (min-width: $screen-xs-min) {
+      float: left;
+    }
+  }
+
+  &-group-left {
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-xs-min) {
+      width: 120px;
+      margin-bottom: 0;
+      padding-top: 2px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 130px;
+    }
+  }
+
+  &-group-right {
+    @media (min-width: $screen-xs-min) {
+      width: calc(100% - 120px);
+    }
+
+    @media (min-width: $screen-sm-min) {
+      width: calc(100% - 135px);
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc(100% - 147px);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-item {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (min-width: $screen-xs-min) {
+      text-align: left;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 40px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.grid-icon-text {
+  position: relative;
+  padding: 30px 0 40px;
+
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 50px 0 55px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    background-color: $gray-28;
+  }
+
+  &:after {
+    background-image: url('../img/White-Wave-100.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .05;
+    z-index: 2;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .row {
+    > div {
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  &-list {
+    > div {
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(3n + 1) {
+        @media (min-width: $screen-sm-min) {
+          clear: left;
+        }
+      }
+    }
+  }
+
+  &-inner {
+    @media (min-width: $screen-sm-min) {
+      padding-right: 30px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      padding-right: 50px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding-right: 75px;
+    }
+  }
+}
+
+.navbar-form .form-control {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    max-width: 200px;
+  }
+}
+
+// Card
+.card {
+  padding: 40px 0 60px;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 60px 0 90px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 105px 0 126px;
+  }
+
+  &__img {
+    line-height: 0;
+    margin-bottom: 17px;
+    min-height: 100px;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    flex-grow: 1;
+    margin-bottom: 14px;
+  }
+
+  &__grid {
+    @media (min-width: $screen-sm-min) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    margin: 0 0 24px;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: $screen-xs-max) {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      display: flex;
+      margin: 0 0 36px 36px;
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      width: calc((100% - 36px) / 2 - 1px);
+
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - 2 * 36px) / 3 - 1px);
+
+      &:nth-child(3n + 1) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__inner {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 27px 18px 33px;
+  }
+}
+
+.application-content {
+  @media (min-width: $screen-md-min) {
+    padding: 40px 0 152px;
+  }
+
+  p,
+  ul,
+  ol {
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 16px;
+    }
+
+    + h2 {
+      margin-top: 57px;
+    }
+  }
+}

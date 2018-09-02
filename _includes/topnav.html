@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="{{ site.baseurl }}/">
+                <span><i class="fa fa-cogs" aria-hidden="true"></i><span> {{ site.title }}
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="{{ site.baseurl }}/" class="dropbtn">Learn More</a>
+                    <div class="dropdown-content">
+                      <a href="{{ "/#What is DataOps?" | prepend: site.baseurl }}">What is DataOps?</a>
+                      <a href="{{ "/#Who Needs DataOps?" | prepend: site.baseurl }}">Who Needs DataOps?</a>
+                      <a href="{{ "/#Friction Areas" | prepend: site.baseurl }}">Friction Areas</a>
+                    </div>
+                </li>
+                <li class="dropdown" {% if page.sectionid=='application' %} class="active" {% endif %}>
+                    <a href="{{ "/applications/" | prepend: site.baseurl }}">Applying DataOps</a>
+                    <div class="dropdown-content">
+                        {% for category_hash in site.data.categories %}
+                        {% assign category = category_hash[1] %}
+                        <a href="{{ "/applications/" | prepend: site.baseurl | 
+                        append: category.short_name }}">{{ category.pretty_name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li {% if page.sectionid=='friction' %} class="active" {% endif %}><a href="{{ "/friction/" | prepend: site.baseurl }}">Data Friction</a></li>
+            </ul>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ site.git_address }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

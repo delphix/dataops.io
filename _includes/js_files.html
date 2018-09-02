@@ -1,0 +1,19 @@
+<script>
+  var baseurl = '{{ site.baseurl }}'
+</script>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }} "></script>
+<script src="{{ "/js/typeahead.bundle.min.js" | prepend: site.baseurl }} "></script>
+
+<script src="{{ "/js/main.js" | prepend: site.baseurl }} "></script>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+<script defer src="{{ "/js/fontawesome-all.js" | prepend: site.baseurl }} "></script>
+<script defer src="{{ "/js/fa-v4-shims.js" | prepend: site.baseurl }} "></script>

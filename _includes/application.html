@@ -1,0 +1,50 @@
+<div class="header-container jumbotron" style="background-image: url('{{ "/img/ml_al.png" | prepend: site.baseurl }}');">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>{{ category.description }}</p>
+  </div>
+</div>
+<div class="application-content bg-pattern-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <h2>The Challenge</h2>
+          <p class="application" >{{ category.challenge }}</p>
+          <h2>DataOps Success Patterns</h2>
+          <h3>People</h3>
+          <ol>
+            {% for item in category.people %}
+            <li class="application" >{{ item }}</li>
+            {% endfor %}
+          </ol>
+          <h3>Process</h3>
+          <ol>
+            {% for item in category.process %}
+            <li class="application" >{{ item }}</li>
+            {% endfor %}
+          </ol>
+          <h3>Technology</h3>
+          <ol>
+            {% for item in category.technology %}
+            <li class="application" >{{ item }}</li>
+            {% endfor %}
+          </ol>
+          <p class="application" >{{ category.references }}</p>
+          <h2>Data Operators and Consumers</h2>
+          <p class="application" >Data friction exists between two groups of people: Data Operators and Data Consumers. Here are some examples of both for {{ category.pretty_name }}</p>
+          <h3>Data Operators</h3>
+          <ul>
+            {% for item in category.data_operators %}
+              <li class="application" >{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <h3>Data Consumers</h3>
+          <ul>
+            {% for item in category.data_consumers %}
+              <li class="application" >{{ item }}</li>
+            {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+short_name: cloud
+description: While spinning up cloud infrastructure is easier than ever, moving data from an on-prem environment to the public cloud (or from one cloud to another) can be slow, manual, and risky. DataOps can simplify and speed the process  migrating data to the cloud.
+pretty_name: Cloud Migration
+fa-icon: fa-cloud-upload-alt
+image: ../img/cloud.jpg
+challenge: >
+  To realize the agility, flexibility, and scalability benefits of the cloud, enterprises must overcome significant data-related roadblocks. Applications containing sensitive data must be properly secured before being migrated—both to protect against the risk of breach and to ensure compliance with data privacy regulations. Also, cloud migration projects are highly iterative, requiring multiple testing, validation, and rehearsal cycles that depend on the continual availability of fresh, high-quality data.
+  <br><br>
+  Enterprises, then, need an effective DataOps approach for moving large volumes of data to cloud environments—one that’s repeatable, secure, and fast enough to keep pace with migration teams’ needs. Any approach also needs to address the full range of migration uses cases demanded by enterprises seeking maximum flexibility: migrating from on-prem environments to a private or public cloud, migration from one cloud to another, or hybrid scenarios involving data synchronized across environments.
+# exec_summary: >
+#   Cloud migration can be an extremely polarizing initiative. On one hand, it’s in the business’s best interest to move quickly to the cloud to reap the foretold agility and cost savings; on the other hand, IT Operations is trying to ensure that the move is well  planned and that the solution will be secure, resilient, and future-proof. The end result is a counterculture of “Shadow IT,” where the business unilaterally starts building in the cloud.
+#   <br><br>
+#   Data friction is a primary driver of this conflict. Spinning up infrastructure and code deployment tools is easier than ever; but getting data into the cloud is still extremely challenging. While data volumes certainly are a major constraining factor, data security multiples those  constraints.
+
+people:
+  - <b>Create a data roadmap:</b> Stakeholders across functions and lines of business must agree on where migrated data will reside as well as how it will be structured, maintained, and consumed.
+  - <b>Set expectations with the business:</b> Migration teams must balance safety and risk reduction with the business’ desire for speed. Communicating concerns to the business and agreeing on a joint action plan eliminates surprises and improves coordination.
+
+process:
+  - <b>Adopt a “data-first” policy:</b> Migrate data in the beginning stages of the overall migration initiative. Easy access to cloud-based datasets early on can preempt application teams bent on pursuing one-off “shadow IT” cloud projects.
+  - <b>Prioritize data quality:</b> When migrating production workloads to the cloud, start with “realistic” datasets. This ensures that every migration phase serves as a rehearsal that builds towards validation of a final production migration.
+
+technology:
+  - <b>Account for sprawl:</b> Seek out technology that not only enables data migration, but also supports follow-on requirements to effectively govern migrated data as it grows, spreads, and otherwise changes over time.
+  - <b>Plan for multi-cloud:</b> Research technologies that satisfy immediate migration plans while also providing flexibility to support multiple cloud vendors in the future.
+
+data_operators:
+  - Database Team
+  - Storage Team
+  - Server Team
+  - Information Security
+data_consumers:
+  - Migration Project Team
+  - Developers
+  - QA/Testers
+  - System Integrators

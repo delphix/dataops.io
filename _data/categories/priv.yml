@@ -1,0 +1,30 @@
+short_name: priv
+description: With data breach incidents regularly making the news and increasing pressure from regulatory bodies and consumers alike, organizations must protect sensitive data across the enterprise. DataOps helps establish consistent governance policies and controls to enable data to flow freely.
+pretty_name: Data Protection, Privacy, and Governance
+fa-icon: fa-user-secret
+image: ../img/priv.jpg
+challenge: >
+  Traditional data security approaches rely heavily on network-oriented perimeter defenses, but do nothing to protect the interior— the data itself. This risk is magnified as data flows across privacy domains, such as from production to non-production systems or from in-house to outsourced teams. Supplementing these technologies are manual controls and checks, measures that are plagued with opportunities for failure and strained by the increased rate and volume of data requests.
+  <br><br>
+  Without appropriate DataOps practices in place to govern the dissemination of data within and across enterprises, businesses can quickly fail to protect sensitive data, along with customer trust, market share and revenue. All too often, businesses are forced to choose between locking down data for security purposes, or making that data easily available to the data consumers who are trying to innovate and grow the business.
+people:
+  - <b>Include security when launching new projects:</b> Security professionals should not merely be consulted periodically or brought in as an afterthought; they must be a part of the team from the beginning. This applies to all projects including software development, data analytics, and cloud migrations.
+  - <b>Acknowledge potential friction points:</b> Security professionals must understand the broader team’s mission and where security measures might create complexity or delays. Likewise, project teams must understands where potential data vulnerabilities lie as well as their significance.
+process:
+  - <b>Introduce automated controls:</b> Instead of trying to protect data with a spreadsheet, encourage security experts to strengthen your security posture with automated controls that drive accuracy and consistency.
+  - <b>Establish a feedback loop:</b>  Security professionals must be able to voice observations and concerns directly to project teams. An open line of communication drives project success even when external requirements change.
+technology:
+  - <b>Start with existing technologies:</b> Initial solutions should feature easy integration into existing technologies to provide demonstrable “quick wins” to build upon.
+  - <b>Embrace platform:</b> At the same time, scalable, extensible solutions will satisfy security requirements across data types and sources as they change over time.
+data_operators:
+  - Database Team
+  - Storage Team
+  - Server Team
+  - Information Security
+data_consumers:
+  - Information Security
+  - Security Auditors
+  - Government
+  - Regulators
+  - CSO
+  - Project Teams (Analytics, Machine Learning, Software Development, etc.)
