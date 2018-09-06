@@ -47,7 +47,7 @@ From then on, you can start the webserver with:
 3.  Add tests for your code.
 4.  Send a pull request.
 
-Contributions must be signed as `User Name <user@email.com>`. Make sure to [set up Git with user name and email address](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup). Bug fixes should branch from the current stable branch. New features should be based on the `release` branch.
+Contributions must be signed as `User Name <user@email.com>`. Make sure to [set up Git with user name and email address](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup). Bug fixes should branch from the current stable branch. New features should be based on the `master` branch.
 
 #### <a id="code-of-conduct"></a>Code of Conduct
 
